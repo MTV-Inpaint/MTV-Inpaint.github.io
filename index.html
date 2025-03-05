@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/pipeline.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="Direct-a-Video">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/pipeline.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Direct-a-Video">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>VideoPaint: A Unified Framework for Long Video Inpainting</title>
+  <link rel="icon" type="image/x-icon" href="static/images/logo.ico">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <img src="static/images/logo.ico" alt="Icon" style="height:64px; width:64px;">
+            VideoPaint: A Unified Framework for Long Video Inpainting 
+          </h1>
+          <!-- <h1 class="title is-1 publication-title">Direct-a-Video: Customized Video Generation with User-Directed Camera Movement and Object Motion </h1> -->
+          <div class="is-size-5 publication-authors">
+            <!-- Paper authors -->
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=gIVxcEoAAAAJ&hl=en" target="_blank">Shiyuan Yang</a><sup>1,3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://edward3862.github.io/" target="_blank">Zheng Gu</a>
+                </a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://liang-hou.github.io/" target="_blank">Liang Hou</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.xtao.website/" target="_blank">Xin Tao</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=P6MraaYAAAAJ&hl=en" target="_blank">Pengfei Wan</a><sup>2</sup>,
+            </span>
+            <span class="author-block"> 
+              <a href="https://faculty.tju.edu.cn/ChenXiaodong/en/index.htm" target="_blank">Xiaodong Chen</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank">Jing Liao</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>City University of Hong Kong,</span>
+            <span class="author-block"><sup>2</sup>Kuaishou Technology,</span>
+            <span class="author-block"><sup>3</sup>Tianjin University,</span>
+            <span class="author-block"><sup>4</sup>Shenzhen University</span>
+            <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding author</small></span> -->
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- ArXiv Link -->
+              <span class="link-block">
+                <a href="#" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Github link -->
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code: Coming Soon</span>
+                </a>
+              </span>
+
+               <!-- Video link
+              <span class="link-block">
+                <a href="https://youtu.be/2s7m-dBimJw"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser image-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div width="100%" style="font-size: 20px; text-align: center;">
+        <b>TL;DR</b>: VideoPaint is a unified video inpainting framework that supports multiple tasks, such as text/image-guided object insertion, scene completion, and
+        derived applications like object editing and removal. It is also capable of handling long videos with hundreds of frames.
+      </div>
+      <div class="text-center video-container" align="center" width="100%">
+      <video preload="True"  src="static/videos/overview_c.mp4" width="100%" height="600"  autoplay controls muted loop height="100%">\
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End teaser image -->
+
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+                Video inpainting involves modifying local regions within a video, ensuring
+                spatial and temporal consistency. Most existing methods focus primarily
+                on scene completion (i.e., filling missing regions) and lack the capability
+                to insert new objects into a scene in a controllable manner. Fortunately,
+                recent advancements in text-to-video (T2V) diffusion models pave the way
+                for text-guided video inpainting. However, directly adapting T2V models for
+                inpainting remains limited in unifying completion and insertion tasks, lacks
+                input controllability, and struggles with long videos, thereby restricting
+                their applicability and flexibility. To address these challenges, we propose
+                VideoPaint, the unified video inpainting framework capable of handling
+                both traditional scene completion and novel object insertion tasks. To unify
+                these distinct tasks, we design a dual-branch spatial attention mechanism in
+                the T2V diffusion U-Net, enabling seamless integration of scene completion
+                and object insertion within a single framework. In addition to textual guidance,
+                VideoPaint supports multimodal control by integrating various image
+                inpainting models through our proposed image-to-video (I2V) inpainting
+                mode. Additionally, we propose a two-stage pipeline that combines keyframe
+                inpainting with in-between frame propagation, enabling VideoPaint to effectively
+                handle long videos with hundreds of frames. Extensive experiments
+                demonstrate that VideoPaint achieves state-of-the-art performance in both
+                scene completion and object insertion tasks. Furthermore, it demonstrates
+                versatility in derived applications such as multi-modal inpainting, object
+                editing, removal, image object brush, and the ability to handle long videos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+
+
+<!-- Method -->
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Method</h2>
+         <div class="item">
+          <!-- Your image here -->
+          <p>
+            Overview of the proposed video inpainting model VideoPaint. 
+          </p>
+          <br>
+          <br>
+          <img src="static/images/pipeline.jpg" alt="MY ALT TEXT"/>
+
+          <p>
+            During training, we employ dual spatial branch U-Net to handle both object insertion and scene completion tasks. 
+            For object insertion, we train the model using object-aware masks, while for scene completion, we use random masks. 
+            Simultaneously, we train the U-Net with three different frame masking modes: 
+            (1) Text-to-Video (T2V) mode: inpaints all frames by text prompt. (2) Image-to-Video (I2V) mode: inpaints subsequent frames based on a provided first frame and text prompt. (3) Keyframe-to-Video (K2V) mode: inpaints in-between frames based on two keyframes given at the beginning and end of a sequence.
+          </p>
+          <br>
+          <p>
+            During inference, our method supports various inpainting scenarios. 
+            It can perform basic T2V inpainting, or I2V inpainting, where the first frame is provided by a third-party image inpainting tool. 
+            For longer videos, we first inpaint keyframes using T2V or I2V modes, and then use the K2V mode to inpaint the remaining intermediate frames, as shown in the right side of Figure. 
+            This two-step pipeline ensures temporal consistency across the entire video.
+          </p>
+        </div>
+    </div>
+  </div>
+  </div>
+  </section>
+  <!-- End Method -->
+
+
+
+
+<!-- Object insertion -->
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-left">
+          <div class="column is-">
+            <h2 class="title is-3">Object Insertion </h2>
+            <h3 class="title is-4">Insert object into video guided by text prompt.</h3>
+            <div class="content has-text-justified">
+  
+              <p>Note:  All the videos are in full-length.</p>
+  
+                <table width="90%" align="center" border="0">
+                <tr class="video-row">
+                  <td style="text-align: center;">
+                  <p>A turtle swimming ...</p>
+                  <video preload="auto" width="320" src="static/videos/obj_ins/a.mp4" autoplay loop controls muted></video>
+                  </td>
+                  <td style="text-align: center;">
+                    <p>A camel walking ...</p>
+                    <video preload="auto"width="320" src="static/videos/obj_ins/b.mp4" autoplay loop controls muted/>
+                  </td>
+                  <td style="text-align: center;">
+                    <p>A dog walking ...</p>
+                    <video preload="auto"width="320" src="static/videos/obj_ins/c.mp4" autoplay loop controls muted/>
+                  </td>
+                  <td style="text-align: center;">
+                    <p>A duck swimming ... </p>
+                    <video preload="auto"width="320" src="static/videos/obj_ins/d.mp4" autoplay loop controls muted/>
+                  </td>
+                </tr>
+
+                <tr class="video-row">
+                  <td style="text-align: center;">
+                  <p>A dog dancing...</p>
+                  <video preload="auto" width="320" src="static/videos/obj_ins/e.mp4" autoplay loop controls muted></video>
+                  </td>
+                  <td style="text-align: center;">
+                    <p>A vintage car driving ...</p>
+                    <video preload="auto"width="320" src="static/videos/obj_ins/f.mp4" autoplay loop controls muted/>
+                  </td>
+                  <td style="text-align: center;">
+                    <p>A panda walking...</p>
+                    <video preload="auto"width="320" src="static/videos/obj_ins/g.mp4" autoplay loop controls muted/>
+                  </td>
+                  <td style="text-align: center;">
+                    <p>A tank driving...</p>
+                    <video preload="auto"width="320" src="static/videos/obj_ins/h.mp4" autoplay loop controls muted/>
+                  </td>
+                </tr>
+
+                <tr class="video-row">
+                  <td style="text-align: center;">
+                  <p>A robot dancing...</p>
+                  <video preload="auto" width="320" src="static/videos/obj_ins/i.mp4" autoplay loop controls muted></video>
+                  </td>
+                  <td style="text-align: center;">
+                    <p>A squirrel searching...</p>
+                    <video preload="auto"width="320" src="static/videos/obj_ins/j.mp4" autoplay loop controls muted/>
+                  </td>
+                  <td style="text-align: center;">
+                    <p>A heron fishing...</p>
+                    <video preload="auto"width="320" src="static/videos/obj_ins/k.mp4" autoplay loop controls muted/>
+                  </td>
+                  <td style="text-align: center;">
+                    <p>A puppy running...</p>
+                    <video preload="auto"width="320" src="static/videos/obj_ins/l.mp4" autoplay loop controls muted/>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+          </div>
+  </section>
+<!-- END Object insertion -->
+
+
+
+<!-- Scene completion-->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-left">
+        <div class="column is-">
+          <h2 class="title is-3">Scene Completion </h2>
+          <h3 class="title is-4">Complete missing regions according to context.</h3>
+          <div class="content has-text-justified">
+
+            <p>Note: The missing regions are marked in red masks. All the videos are in full-length.</p>
+
+              <table width="90%" align="center" border="0">
+              <tr class="video-row">
+                <td style="text-align: center;">
+                <video preload="auto" width="320" src="static/videos/scene/a.mp4" autoplay loop controls muted></video>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/scene/b.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/scene/c.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/scene/d.mp4" autoplay loop controls muted/>
+                </td>
+              </tr>
+
+              <tr class="video-row">
+                <td style="text-align: center;">
+                <video preload="auto" width="320" src="static/videos/scene/e.mp4" autoplay loop controls muted></video>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/scene/f.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/scene/g.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/scene/p.mp4" autoplay loop controls muted/>
+                </td>
+              </tr>
+
+              <tr class="video-row">
+                <td style="text-align: center;">
+                <video preload="auto" width="320" src="static/videos/scene/i.mp4" autoplay loop controls muted></video>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/scene/j.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/scene/k.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/scene/m.mp4" autoplay loop controls muted/>
+                </td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+</section>
+<!-- END scene completion -->
+
+
+
+
+
+
+<!-- Object Removal-->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-left">
+        <div class="column is-">
+          <h2 class="title is-3">Object Removal </h2>
+          <h3 class="title is-4">Remove foreground object from a video.</h3>
+          <div class="content has-text-justified">
+
+            <p>Note: All the videos are in full-length.</p>
+
+              <table width="90%" align="center" border="0">
+              <tr class="video-row">
+                <td style="text-align: center;">
+                <video preload="auto" width="320" src="static/videos/removal/a.mp4" autoplay loop controls muted></video>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/removal/b.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/removal/c.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/removal/d.mp4" autoplay loop controls muted/>
+                </td>
+              </tr>
+
+              <tr class="video-row">
+                <td style="text-align: center;">
+                <video preload="auto" width="320" src="static/videos/removal/e.mp4" autoplay loop controls muted></video>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/removal/f.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/removal/r.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/removal/p.mp4" autoplay loop controls muted/>
+                </td>
+              </tr>
+
+              <tr class="video-row">
+                <td style="text-align: center;">
+                <video preload="auto" width="320" src="static/videos/removal/i.mp4" autoplay loop controls muted></video>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/removal/j.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/removal/k.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="320" src="static/videos/removal/m.mp4" autoplay loop controls muted/>
+                </td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+</section>
+<!-- END Object Removal -->
+
+
+
+
+
+
+<!-- Object editing -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-left">
+        <div class="column is-">
+          <h2 class="title is-3">Object Editing </h2>
+          <h3 class="title is-4">Edit the object apperance in a video.</h3>
+          <div class="content has-text-justified">
+
+            <p>Note:  All the videos are in full-length.</p>
+
+              <table width="90%" align="center" border="0">
+              <tr class="video-row">
+                <td style="text-align: center;">
+                <p>A polar bear ...</p>
+                <video preload="auto" width="320" src="static/videos/edit/a.mp4" autoplay loop controls muted></video>
+                </td>
+                <td style="text-align: center;">
+                  <p>A swan in turtle shape ...</p>
+                  <video preload="auto"width="320" src="static/videos/edit/b.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <p>A metal camel ...</p>
+                  <video preload="auto"width="320" src="static/videos/edit/c.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <p>A car in cyber punk style ...</p>
+                  <video preload="auto"width="320" src="static/videos/edit/d.mp4" autoplay loop controls muted/>
+                </td>
+              </tr>
+
+              <tr class="video-row">
+                <td style="text-align: center;">
+                <p>An orange sports car ...</p>
+                <video preload="auto" width="320" src="static/videos/edit/e.mp4" autoplay loop controls muted></video>
+                </td>
+                <td style="text-align: center;">
+                  <p>A fox ...</p>
+                  <video preload="auto"width="320" src="static/videos/edit/f.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <p>A robotic flamingo ...</p>
+                  <video preload="auto"width="320" src="static/videos/edit/g.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <p>A robot walking  ...</p>
+                  <video preload="auto"width="320" src="static/videos/edit/h.mp4" autoplay loop controls muted/>
+                </td>
+              </tr>
+
+              <tr class="video-row">
+                <td style="text-align: center;">
+                <p>A cat ...</p>
+                <video preload="auto" width="320" src="static/videos/edit/i.mp4" autoplay loop controls muted></video>
+                </td>
+                <td style="text-align: center;">
+                  <p>A metal rhino ...</p>
+                  <video preload="auto"width="320" src="static/videos/edit/j.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <p>A female robot ...</p>
+                  <video preload="auto"width="320" src="static/videos/edit/k.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <p>A black-and-white cow ...</p>
+                  <video preload="auto"width="320" src="static/videos/edit/l.mp4" autoplay loop controls muted/>
+                </td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+</section>
+<!-- END Object editing -->
+
+
+
+<!-- Image brush -->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-left">
+        <div class="column is-">
+          <h2 class="title is-3">Image Object Brush </h2>
+          <h3 class="title is-4">Insert object into static image to make dynamic video</h3>
+          <div class="content has-text-justified">
+
+
+            <table width="90%" align="center" border="0">
+              <tr class="video-row">
+                <td style="text-align: center;">
+                  <video preload="auto"width="480" src="static/videos/image_brush/beach_c.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                  <video preload="auto"width="480" src="static/videos/image_brush/ocean.mp4" autoplay loop controls muted/>
+                </td>
+              </tr>
+            </table>
+
+
+            <table width="90%" align="center" border="0">
+              <!-- <tr>
+                <td style="font-family: Chalkduster; font-size: 16px; text-align: center;"> "A teddy bear walks on the beach." <br> <a style="font-family: sans-serif">(80 frames)</a> </td>
+                <td style="font-family: Chalkduster; font-size: 16px; text-align: center;"> "A teddy bear dancing in Times Square" <br> <a style="font-family: sans-serif">(320 frames)</a> </td>
+              </tr> -->
+
+              <tr class="video-row">
+                <td style="text-align: center;">
+                    <video preload="auto"width="320" src="static/videos/image_brush/car.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                    <video preload="auto"width="320" src="static/videos/image_brush/street.mp4" autoplay loop controls muted/>
+                </td>
+                <td style="text-align: center;">
+                    <video preload="auto"width="320" src="static/videos/image_brush/ufo.mp4" autoplay loop controls muted/>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+</section>
+<!--End Image brush -->
+
+
+
+<!-- Multi-modal-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3">Multi-modal Inpainting </h2>
+      <h3 class="title is-4">Combine with any existing image inpainting method to enable multi-modal guidance.</h3>
+      <div class="text-center video-container" align="center" width="100%">
+      <video preload="auto" src="static/videos/mm.mp4" width="100%" height="600" autoplay loop controls muted/>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Multi-modal-->
+
+
+
+<!-- Comparison: object insertion -->
+<section class="hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3 has-text-left">Comparisons: Object insertion task</h2>
+        <!-- <p>Notice: Most of the videos are 10 seconds in length. DiffuEraser can generate temporally consistent results with sufficient detail and texture for long-sequence inference.</p>
+  
+        <h2 class="title is-4">The Object and Background Remain Relatively motion</h2>
+        <p>DiffuEraser can restore details and objects by leveraging information from adjacent frames 
+           while maintaining temporal consistency for long-sequence inference. </p> -->
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1">
+            <video poster="" id="video1" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/compare_obj/1.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video2">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/compare_obj/2.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video3">
+            <video poster="" id="video3" autoplay controls muted loop height="100%">\
+              <!-- Your video file here -->
+              <source src="static/videos/compare_obj/3.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video4">
+            <video poster="" id="video4" autoplay controls muted loop height="100%">\
+              <!-- Your video file here -->
+              <source src="static/videos/compare_obj/4.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+  
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+<!-- End Comparison: object insertion -->
+  
+
+
+
+
+<!-- Comparison: scene completion -->
+<section class="hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3 has-text-left">Comparisons: Scene completion task</h2>
+        <!-- <p>Notice: Most of the videos are 10 seconds in length. DiffuEraser can generate temporally consistent results with sufficient detail and texture for long-sequence inference.</p>
+  
+        <h2 class="title is-4">The Object and Background Remain Relatively motion</h2>
+        <p>DiffuEraser can restore details and objects by leveraging information from adjacent frames 
+           while maintaining temporal consistency for long-sequence inference. </p> -->
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1">
+            <video poster="" id="video1" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/compare_scene/1.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video2">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/compare_scene/2.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video3">
+            <video poster="" id="video3" autoplay controls muted loop height="100%">\
+              <!-- Your video file here -->
+              <source src="static/videos/compare_scene/3.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video4">
+            <video poster="" id="video4" autoplay controls muted loop height="100%">\
+              <!-- Your video file here -->
+              <source src="static/videos/compare_scene/4.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+  
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+<!-- End Comparison: scene completion -->
+  
+
+
+
+
+
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{videopaint,
+      title={videopaint: xxx}, 
+      author={xxx},
+      year={xx},
+      eprint={2501.xx},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={xxx}, 
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            </a>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  bulmaCarousel.attach('#results-carousel11', {
+      slidesToScroll: 1,
+      slidesToShow: 2,
+      infinite: true,
+      autoplay: false,
+  });
+  bulmaCarousel.attach('#results-carousel22', {
+      slidesToScroll: 1,
+      slidesToShow: 2,
+      infinite: true,
+      autoplay: false,
+  });
+  </script>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
