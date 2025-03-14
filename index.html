@@ -15,17 +15,17 @@
   <meta property="og:image:height" content="630" />
 
 
-  <meta name="twitter:title" content="Direct-a-Video">
+  <meta name="twitter:title" content="MVPaint">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="static/images/pipeline.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="Direct-a-Video">
+  <meta name="keywords" content="MVPaint">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>VideoPaint: A Unified Framework for Long Video Inpainting</title>
+  <title>MVPaint: Multi-task Long Video Inpainting</title>
   <link rel="icon" type="image/x-icon" href="static/images/logo.ico">
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -54,14 +54,16 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">
-            <img src="static/images/logo.ico" alt="Icon" style="height:64px; width:64px;">
-            VideoPaint: A Unified Framework for Long Video Inpainting 
+            <img src="static/images/logo.ico" alt="Icon" style="height:64px; width:64px;vertical-align:middle">
+            
+               MVPaint: Multi-task Long Video Inpainting 
           </h1>
-          <!-- <h1 class="title is-1 publication-title">Direct-a-Video: Customized Video Generation with User-Directed Camera Movement and Object Motion </h1> -->
+          <!-- <h1 class="title is-1 publication-title">MVPaint: Customized Video Generation with User-Directed Camera Movement and Object Motion </h1> -->
           <div class="is-size-5 publication-authors">
             <!-- Paper authors -->
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=gIVxcEoAAAAJ&hl=en" target="_blank">Shiyuan Yang</a><sup>1,3</sup>,
+              <!-- <a href="https://scholar.google.com/citations?user=gIVxcEoAAAAJ&hl=en" target="_blank">Shiyuan Yang</a><sup>1,3</sup>, -->
+                Shiyuan Yang<sup>1,3</sup>,
             </span>
             <span class="author-block">
               <a href="https://edward3862.github.io/" target="_blank">Zheng Gu</a>
@@ -148,7 +150,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <div width="100%" style="font-size: 20px; text-align: center;">
-        <b>TL;DR</b>: VideoPaint is a unified video inpainting framework that supports multiple tasks, such as text/image-guided object insertion, scene completion, and
+        <b>TL;DR</b>: MVPaint is a unified video inpainting framework that supports multiple tasks, such as text/image-guided object insertion, scene completion, and
         derived applications like object editing and removal. It is also capable of handling long videos with hundreds of frames.
       </div>
       <div class="text-center video-container" align="center" width="100%">
@@ -178,17 +180,17 @@
                 inpainting remains limited in unifying completion and insertion tasks, lacks
                 input controllability, and struggles with long videos, thereby restricting
                 their applicability and flexibility. To address these challenges, we propose
-                VideoPaint, the unified video inpainting framework capable of handling
+                MVPaint, a unified multi-task video inpainting framework capable of handling
                 both traditional scene completion and novel object insertion tasks. To unify
                 these distinct tasks, we design a dual-branch spatial attention mechanism in
                 the T2V diffusion U-Net, enabling seamless integration of scene completion
                 and object insertion within a single framework. In addition to textual guidance,
-                VideoPaint supports multimodal control by integrating various image
+                MVPaint supports multimodal control by integrating various image
                 inpainting models through our proposed image-to-video (I2V) inpainting
                 mode. Additionally, we propose a two-stage pipeline that combines keyframe
-                inpainting with in-between frame propagation, enabling VideoPaint to effectively
+                inpainting with in-between frame propagation, enabling MVPaint to effectively
                 handle long videos with hundreds of frames. Extensive experiments
-                demonstrate that VideoPaint achieves state-of-the-art performance in both
+                demonstrate that MVPaint achieves state-of-the-art performance in both
                 scene completion and object insertion tasks. Furthermore, it demonstrates
                 versatility in derived applications such as multi-modal inpainting, object
                 editing, removal, image object brush, and the ability to handle long videos.
@@ -211,7 +213,7 @@
          <div class="item">
           <!-- Your image here -->
           <p>
-            Overview of the proposed video inpainting model VideoPaint. 
+            Overview of the proposed video inpainting model MVPaint. 
           </p>
           <br>
           <br>
@@ -246,7 +248,10 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-left">
           <div class="column is-">
-            <h2 class="title is-3">Object Insertion </h2>
+            <h2 class="title is-3">
+              <img src="static/images/ins.ico" alt="Object Insertion Icon" style="height:48px; width:48px; margin-right:8px; vertical-align:middle;">
+              Object Insertion
+            </h2>
             <h3 class="title is-4">Insert object into video guided by text prompt.</h3>
             <div class="content has-text-justified">
   
@@ -324,7 +329,10 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-left">
         <div class="column is-">
-          <h2 class="title is-3">Scene Completion </h2>
+          <h2 class="title is-3">
+            <img src="static/images/comp.ico" alt="Scene completion Icon" style="height:48px; width:48px; margin-right:8px; vertical-align:middle;">
+            Scene Completion
+          </h2>
           <h3 class="title is-4">Complete missing regions according to context.</h3>
           <div class="content has-text-justified">
 
@@ -393,7 +401,10 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-left">
         <div class="column is-">
-          <h2 class="title is-3">Object Removal </h2>
+          <h2 class="title is-3">
+            <img src="static/images/rm.ico" alt="Object Removal Icon" style="height:48px; width:48px; margin-right:8px; vertical-align:middle;">
+            Object Removal
+          </h2>
           <h3 class="title is-4">Remove foreground object from a video.</h3>
           <div class="content has-text-justified">
 
@@ -462,7 +473,10 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-left">
         <div class="column is-">
-          <h2 class="title is-3">Object Editing </h2>
+          <h2 class="title is-3">
+            <img src="static/images/edit.ico" alt="Object Editing Icon" style="height:48px; width:48px; margin-right:8px; vertical-align:middle;">
+            Object Editing
+          </h2>
           <h3 class="title is-4">Edit the object apperance in a video.</h3>
           <div class="content has-text-justified">
 
@@ -540,7 +554,10 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-left">
         <div class="column is-">
-          <h2 class="title is-3">Image Object Brush </h2>
+          <h2 class="title is-3">
+            <img src="static/images/brush.ico" alt="Image Object Brush Icon" style="height:48px; width:48px; margin-right:8px; vertical-align:middle;">
+            Image Object Brush
+          </h2>
           <h3 class="title is-4">Insert object into static image to make dynamic video</h3>
           <div class="content has-text-justified">
 
@@ -586,7 +603,10 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <h2 class="title is-3">Multi-modal Inpainting </h2>
+      <h2 class="title is-3">
+        <img src="static/images/mm.ico" alt="MM Icon" style="height:48px; width:48px; margin-right:8px; vertical-align:middle;">
+        Multi-modal Inpainting
+      </h2>
       <h3 class="title is-4">Combine with any existing image inpainting method to enable multi-modal guidance.</h3>
       <div class="text-center video-container" align="center" width="100%">
       <video preload="auto" src="static/videos/mm.mp4" width="100%" height="600" autoplay loop controls muted/>
@@ -707,8 +727,8 @@
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{videopaint,
-      title={videopaint: xxx}, 
+      <pre><code>@misc{MVPaint,
+      title={MVPaint: xxx}, 
       author={xxx},
       year={xx},
       eprint={2501.xx},
